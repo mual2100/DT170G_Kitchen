@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kitchen</string>
+    <string-array name="status_options">
+        <item>PENDING</item>
+        <item>COMPLETED</item>
+        <item>CANCELLED</item>
+    </string-array>
+
+</resources>
