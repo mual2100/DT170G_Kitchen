@@ -1,0 +1,5 @@
+<!-- drawable/notification_icon.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/notification_icon_color" />
+</shape>

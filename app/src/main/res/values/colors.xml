@@ -6,4 +6,11 @@
     <color name="meal_color_2">#3F51B5</color>
     <color name="meal_color_3">#3F51B5</color>
     <color name="blue_button">#7345C3</color>
+    <color name="transparent">#00000000</color>
+    <color name="start_color">#FF7345C3</color>
+    <color name="end_color">#FF452BC3</color>
+    <color name="stroke_color">#FF7345C3</color>
+    <color name="initial_color">#D1554C</color>
+    <color name="flash_color">#E52618</color>
+    <color name="notification_icon_color">#56F436</color>
 </resources>

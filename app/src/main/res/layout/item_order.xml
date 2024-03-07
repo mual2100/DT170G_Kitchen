@@ -1,109 +1,158 @@
+<!-- item_order.xml -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_marginTop="8dp"
     android:background="@drawable/rounded_dashed_border"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Order Details Section -->
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order Details"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"/>
-
+    <!-- Table Number -->
     <TextView
         android:id="@+id/textViewTableNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="4dp"/>
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:rotation="3"
+        android:rotationX="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
+
+    <!-- Time -->
     <TextView
         android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="4dp"/>
+        android:textStyle="bold" />
 
+    <!-- Comment -->
     <TextView
         android:id="@+id/textViewComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableEnd="@drawable/rounded_dashed_border"
+        android:gravity="center"
+        android:textColor="#FF0000"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"/>
+        android:textStyle="bold" />
 
-    <!-- Status Section -->
-    <TextView
-        android:id="@+id/textViewStatusTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order Status"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp"/>
-    <TextView
-        android:id="@+id/textViewAppetizerStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="4dp"/>
 
-    <Spinner
-        android:id="@+id/spinnerAppetizerStatus"
-        android:layout_width="wrap_content"
+    <!-- Appetizer Status -->
+    <LinearLayout
+        android:id="@+id/layoutAppetizerStatus"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:entries="@array/status_options" />
+        android:background="@drawable/katolgi"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textViewMainStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="4dp"/>
+        <CheckBox
+            android:id="@+id/checkBoxAppetizerStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appetizer Status"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinnerMainStatus"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewAppetizerStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAppetizers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <!-- Main Course Status -->
+    <LinearLayout
+        android:id="@+id/layoutMainCourseStatus"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:entries="@array/status_options" />
+        android:background="@drawable/katolgi"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textViewDessertStatus"
-        android:layout_width="wrap_content"
+        <CheckBox
+            android:id="@+id/checkBoxMainStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main Status"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewMainStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMainCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <!-- Dessert Status -->
+    <LinearLayout
+        android:id="@+id/layoutDessertStatus"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingBottom="16dp"/>
-    <!-- Spinners for selecting order status -->
+        android:layout_marginTop="8dp"
+        android:background="@drawable/katolgi"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxDessertStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dessert Status"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDessertStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDessert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal" />
+    </LinearLayout>
 
     <!-- Button to send the updated order -->
-
-    <Spinner
-        android:id="@+id/spinnerDessertStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:entries="@array/status_options" />
-
     <Button
         android:id="@+id/buttonSendOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Order"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Add other TextViews for additional order details -->
-
+        android:layout_marginTop="16dp"
+        android:text="Send Order" />
 </LinearLayout>

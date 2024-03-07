@@ -5,5 +5,8 @@
         <item>COMPLETED</item>
         <item>CANCELLED</item>
     </string-array>
+    <string name="channel_id">order_notification_channel</string>
+    <string name="channel_name">Order Notifications</string>
+    <string name="channel_description">Notifications for new orders</string>
 
 </resources>

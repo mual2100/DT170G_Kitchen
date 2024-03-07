@@ -1,9 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="@android:color/transparent" />
+
+    <!-- Use color resources -->
+    <solid android:color="@color/transparent" />
+
+    <!-- Add gradient for background -->
+    <gradient
+        android:startColor="@color/start_color"
+        android:endColor="@color/end_color"
+        android:angle="45"/>
+
+    <!-- Adjust stroke width and color -->
     <stroke
         android:width="2dp"
-        android:color="#7345C3" />
-    <corners android:radius="8dp" />
+        android:color="@color/stroke_color" />
+
+    <!-- Fine-tune corner radius -->
+    <corners android:radius="12dp" />
+
 </shape>
