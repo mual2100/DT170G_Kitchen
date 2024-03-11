@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements OrderAdapter.Orde
 
         // Initialize Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.82.242.206:8080/projektDT170G-1.0-SNAPSHOT/api/")
+                .baseUrl("http://10.82.234.67:8080/projektDT170G-1.0-SNAPSHOT/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements OrderAdapter.Orde
                     Toast.makeText(MainActivity.this, "Order updated successfully", Toast.LENGTH_SHORT).show();
                 } else {
                     // Handle unsuccessful response
-                    Toast.makeText(MainActivity.this, "Failed to update order", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Failed to update order", Toast.LENGTH_SHORT).show();
                 }
             }
 

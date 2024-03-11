@@ -100,9 +100,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                 @Override
                 public void onClick(View v) {
                     OrderDTO order = orders.get(getAdapterPosition());
-                    order.setStatusAppetizer(checkBoxAppetizerStatus.isChecked() ? "COMPLETED" : "PENDING");
-                    order.setStatusMain(checkBoxMainStatus.isChecked() ? "COMPLETED" : "PENDING");
-                    order.setStatusDessert(checkBoxDessertStatus.isChecked() ? "COMPLETED" : "PENDING");
+                    order.setStatusAppetizer(checkBoxAppetizerStatus.isChecked() ? "COMPLETED" : "None");
+                    order.setStatusMain(checkBoxMainStatus.isChecked() ? "COMPLETED" : "None");
+                    order.setStatusDessert(checkBoxDessertStatus.isChecked() ? "COMPLETED" : "None");
                     orderUpdateListener.sendUpdatedOrder(order);
                     //updateStatusViews(order);
                 }
@@ -120,13 +120,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             // Set up adapters for each food type
             Map<String, List<Food>> foodMap = groupFoodsByType(order.getFoods());
             recyclerViewAppetizers.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
-            recyclerViewAppetizers.setAdapter(new FoodAdapter(foodMap.get("förrätt")));
+            recyclerViewAppetizers.setAdapter(new FoodAdapter(foodMap.get("Förrätt")));
 
             recyclerViewMainCourse.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
-            recyclerViewMainCourse.setAdapter(new FoodAdapter(foodMap.get("huvudrätt")));
+            recyclerViewMainCourse.setAdapter(new FoodAdapter(foodMap.get("Huvudrätt")));
 
             recyclerViewDessert.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
-            recyclerViewDessert.setAdapter(new FoodAdapter(foodMap.get("efterrätt")));
+            recyclerViewDessert.setAdapter(new FoodAdapter(foodMap.get("Efterrätt")));
         }
         private Map<String, List<Food>> groupFoodsByType(List<Food> foods) {
             Map<String, List<Food>> foodMap = new HashMap<>();
@@ -156,15 +156,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             if (order.getStatusMain().equals("COMPLETED")) {
                 checkBoxMainStatus.setVisibility(View.GONE);
                 checkBoxMainStatus.getParent().requestLayout();
+                recyclerViewMainCourse.setVisibility(View.GONE);
             } else {
                 checkBoxMainStatus.setVisibility(View.VISIBLE);
+                recyclerViewMainCourse.setVisibility(View.VISIBLE);
             }
 
             if (order.getStatusDessert().equals("COMPLETED")) {
                 checkBoxDessertStatus.setVisibility(View.GONE);
                 checkBoxDessertStatus.getParent().requestLayout();
+                recyclerViewDessert.setVisibility(View.GONE);
             } else {
                 checkBoxDessertStatus.setVisibility(View.VISIBLE);
+                recyclerViewDessert.setVisibility(View.VISIBLE);
             }
         }
     }
